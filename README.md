@@ -3,7 +3,7 @@
 These examples use **real OpenAI API requests** and **simulated IT operations data**.
 No production infrastructure is accessed or modified. API usage may incur charges.
 
-## Setup (macOS / VS Code)
+## Setup (macOS / Linux)
 
 ```bash
 python3 -m venv .venv
@@ -11,6 +11,8 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 cp .env.example .env
 ```
+
+On Debian/Ubuntu, install `python3-venv` first if `python3 -m venv` fails.
 
 Edit `.env` and enter your OpenAI API key. Do not commit or share the key.
 

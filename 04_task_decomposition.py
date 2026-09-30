@@ -30,9 +30,9 @@ def create_plan(user_request):
                              "tasks": {"type": "array", "items": {"type": "string"}}},
                              "required": ["tasks"], "additionalProperties": False}}},
     )
-    tasks = json.loads(response.output_text)["tasks"]
-    if not 2 <= len(tasks) <= 4:
-        raise ValueError("The plan must contain 2 to 4 tasks.")
+    tasks = json.loads(response.output_text)["tasks"][:4]
+    if not tasks:
+        raise ValueError("The planner returned no tasks.")
     return tasks
 
 
